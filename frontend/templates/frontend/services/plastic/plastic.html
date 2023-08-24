@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}KlinikX - Plastic Surgery{% endblock %}
+
+{% block meta_description %}
+Discover our advanced plastic surgery procedures for enhancing your appearance and boosting your confidence. Our skilled surgeons and state-of-the-art facility ensure safe and satisfactory outcomes. Explore Rhinoplasty, Liposuction, Tummy Tuck, Facelift, and more.
+{% endblock %}
+
+{% block meta_keywords %}
+plastic surgery, rhinoplasty, liposuction, tummy tuck, facelift, cosmetic surgery, plastic surgery procedures, plastic surgery cost, plastic surgery clinic
+{% endblock %}
+
+
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'services' %}"><span style="color:black !important;"  >Services</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'plastic' %}"><span >Plastic Surgery</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="container-xxl py-3">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+    </div>
+    <ul class="nav nav-tabs nav-fill custom-nav-styled mb-3">
+      <li class="nav-item">
+        <a class="nav-link active text-uppercase" data-bs-toggle="pill" href="#rhinoplasty">Rhinoplasty</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#liposuction">Liposuction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#tummytuck">Tummy Tuck</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#facelift">Facelift</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#plasticsurgerypricing">Pricing</a>
+      </li>
+      <!-- Add more nav-items with nav-links for additional tabs as needed -->
+    </ul>
+
+    <div class="tab-content">
+      {% include 'frontend/services/plastic/rhinoplasty.html' %}
+      {% include 'frontend/services/plastic/liposuction.html' %}
+      {% include 'frontend/services/plastic/tummy_tuck.html' %}
+      {% include 'frontend/services/plastic/facelift.html' %}
+      {% include 'frontend/services/plastic/pricing.html' %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

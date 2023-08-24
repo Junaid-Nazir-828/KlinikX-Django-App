@@ -1,0 +1,785 @@
+/********** Template CSS **********/
+:root {
+    --primary: #0463fa;
+    --light: #eff5ff;
+    --dark: #1b2c51;
+    --bs-klinkx-rgb: 15, 117, 188;
+}
+
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.fw-black {
+    font-weight: 900 !important;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+/* ChatBot HTML */
+
+/* Import Google font - Poppins */
+.chatbot-toggler {
+    position: fixed;
+    bottom: 30px;
+    left: 35px;
+    outline: none;
+    border: none;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #724ae8;
+    transition: all 0.2s ease;
+}
+body.show-chatbot .chatbot-toggler {
+    transform: rotate(90deg);
+}
+.chatbot-toggler span {
+    color: #fff;
+    position: absolute;
+}
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child {
+    opacity: 0;
+}
+body.show-chatbot .chatbot-toggler span:last-child {
+    opacity: 1;
+}
+.chatbot {
+    position: fixed;
+    left: 35px;
+    bottom: 90px;
+    width: 420px;
+    height: 70%;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.5);
+    transform-origin: bottom right;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease;
+}
+body.show-chatbot .chatbot {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+.chatbot header {
+    padding: 16px 0;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #724ae8;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.chatbot header span {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    display: none;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+header h2 {
+    font-size: 1.4rem;
+}
+.chatbot .chatbox {
+    overflow-y: auto;
+    height: 510px;
+    padding: 30px 20px 100px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+    width: 6px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 25px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+.chatbox .chat {
+    display: flex;
+    list-style: none;
+}
+.chatbox .outgoing {
+    margin: 20px 0;
+    justify-content: flex-end;
+}
+.chatbox .incoming span {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    cursor: default;
+    text-align: center;
+    line-height: 32px;
+    align-self: flex-end;
+    background: #724ae8;
+    border-radius: 4px;
+    margin: 0 10px 7px 0;
+}
+.chatbox .chat p {
+    white-space: pre-wrap;
+    padding: 12px 16px;
+    border-radius: 10px 10px 0 10px;
+    max-width: 75%;
+    color: #fff;
+    font-size: 0.95rem;
+    background: #724ae8;
+}
+.chatbox .incoming p {
+    border-radius: 10px 10px 10px 0;
+}
+.chatbox .chat p.error {
+    color: #721c24;
+    background: #f8d7da;
+}
+.chatbox .incoming p {
+    color: #000;
+    background: #f2f2f2;
+}
+.chatbot .chat-input {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 3px 20px;
+    border-top: 1px solid #ddd;
+}
+.chat-input textarea {
+    height: 55px;
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    max-height: 180px;
+    padding: 15px 15px 15px 0;
+    font-size: 0.95rem;
+}
+.chat-input span {
+    align-self: flex-end;
+    color: #724ae8;
+    cursor: pointer;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    visibility: hidden;
+    font-size: 1.35rem;
+}
+.chat-input textarea:valid ~ span {
+    visibility: visible;
+}
+
+@media (max-width: 490px) {
+    .chatbot-toggler {
+        right: 20px;
+        bottom: 20px;
+    }
+    .chatbot {
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-radius: 0;
+        width: 100%;
+    }
+    .chatbot .chatbox {
+        height: 90%;
+        padding: 25px 15px 100px;
+    }
+    .chatbot .chat-input {
+        padding: 5px 15px;
+    }
+    .chatbot header span {
+        display: block;
+    }
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity 0.5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #ffffff;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar .navbar-nav {
+        border-top: 1px solid #eeeeee;
+    }
+}
+
+.navbar .navbar-brand,
+.navbar a.btn {
+    height: 75px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: 0.5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: 0.5s;
+        opacity: 1;
+    }
+}
+
+/*** Nav Pill ***/
+.nav-pills .nav-link {
+    border-radius: 0 !important;
+}
+
+/*** Header ***/
+.header-carousel .owl-carousel-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-carousel .owl-nav {
+    position: absolute;
+    width: 200px;
+    height: 45px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: 0.5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.header-carousel .owl-dots {
+    position: absolute;
+    height: 45px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.header-carousel .owl-dot::after {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 5px;
+    top: 4px;
+    left: 4px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.header-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.page-header {
+    background: url(../img/header-page.jpg) top center no-repeat;
+    background-size: cover;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.page-header-aboutus {
+    background: url(../img/about-us.jpg) top center no-repeat;
+    background-size: cover;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+/*** Service ***/
+.service-item {
+    transition: 0.5s;
+}
+
+.service-item:hover {
+    margin-top: -10px;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.service-item .btn {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.service-item:hover .btn {
+    width: 140px;
+}
+
+/*** Feature ***/
+@media (min-width: 992px) {
+    .container.feature {
+        max-width: 100% !important;
+    }
+
+    .feature-text {
+        padding-left: calc(((100% - 960px) / 2) + 0.75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .feature-text {
+        padding-left: calc(((100% - 1140px) / 2) + 0.75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .feature-text {
+        padding-left: calc(((100% - 1320px) / 2) + 0.75rem);
+    }
+}
+
+/*** Appointment ***/
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+/*** Footer ***/
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #ffffff;
+    transition: 0.3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, 0.1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .copyright a:hover {
+    color: var(--primary);
+}
+
+/*** Pricing ***/
+
+.pricingTable__header {
+    font-size: 1.6em;
+    padding: 40px 0px;
+    border-bottom: 2px solid #ebedec;
+}
+
+.pricingTable__pricing {
+    font-size: 3em;
+    padding: 30px 0px;
+    border-bottom: 2px solid #ebedec;
+    line-height: 0.7;
+}
+
+.pricingTable__options {
+    list-style: none;
+    padding: 15px;
+    font-size: 0.9em;
+    border-bottom: 2px solid #ebedec;
+}
+
+.pricingTable__options > li {
+    padding: 8px 0px;
+}
+
+.pricingTable__options > li:before {
+    content: "✓";
+    display: inline-flex;
+    margin-right: 15px;
+    color: white;
+    background-color: #5a6268;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 0.8em;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricingTable__getstart {
+    color: white;
+    border: 0;
+
+    background-color: #5a6268;
+    margin-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 15px;
+    box-shadow: 0px 3px 0px 0px rgba(255, 165, 0, 1);
+    letter-spacing: 0.07em;
+    transition: all 0.4s ease;
+}
+
+.pricingTable__getstart:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 40px 29px -19px rgba(255, 165, 0, 0.9);
+    background-color: var(--primary);
+}
+
+.pricingTable__getstart:active {
+    box-shadow: inset 0 0 10px 1px rgba(255, 165, 0, 1),
+        0px 40px 29px -19px rgba(255, 165, 0, 0.95);
+    transform: scale(0.95) translateY(-9px);
+}
+
+.custom-nav-styled .nav-link {
+    color: #5a6268; /* Change this to whatever color you want */
+    border: 1px solid #dee2e6;
+}
+
+.custom-nav-styled .nav-link.active {
+    color: #fff; /* Change this to whatever color you want */
+    background-color: #0f75bc; /* Change this to whatever color you want */
+    border-color: #0f75bc;
+}
+
+/*** breadcrumb **/
+.nav-breadcrumb {
+    margin-top: 40px;
+}
+.breadcrumb > li + li:before {
+    content: "" !important;
+}
+
+.breadcrumb {
+    padding: 19px;
+    color: #aaa !important;
+    letter-spacing: 3px;
+    border-radius: 5px !important;
+}
+
+.first ol {
+    padding-left: 50px;
+    border-top-right-radius: 200px !important;
+    border-bottom-right-radius: 200px !important;
+    border-top-left-radius: 200px !important;
+    border-bottom-left-radius: 200px !important;
+}
+
+.first-1 {
+    background-color: white !important;
+}
+
+nav ol li a {
+    text-decoration: none !important;
+    color: #aaa !important;
+}
+
+nav ol li {
+    margin-right: 20px !important;
+}
+
+nav ol li a:focus,
+nav ol li a:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+nav ol li img {
+    vertical-align: bottom;
+    opacity: 0.5;
+    margin-left: 15px !important;
+}
+
+.first a:hover {
+    color: black !important;
+}
+
+.active-1 {
+    font-size: 15px !important;
+    padding-bottom: 12px !important;
+    padding-top: 12px !important;
+    padding-right: 30px !important;
+    padding-left: 25px !important;
+    border-radius: 200px !important;
+    background-color: #0f75bc !important;
+    color: white !important;
+}
+
+@media (max-width: 767px) {
+    .breadcrumb {
+        font-size: 15px;
+    }
+
+    .breadcrumb-item + .breadcrumb-item {
+        padding-left: 0;
+        color: black;
+    }
+
+    nav ol li img {
+        width: 11px;
+        height: 11px;
+        vertical-align: middle;
+    }
+
+    .active-1 {
+        font-size: 10px !important;
+        padding-right: 8px !important;
+        padding-left: 8px !important;
+        background-color: #0f75bc !important;
+        width: 100% !important;
+        color: white !important;
+    }
+
+    .breadcrumb {
+        letter-spacing: 1px !important;
+    }
+
+    .breadcrumb > * div {
+        max-width: 60px;
+    }
+}
+
+.bg-klinkx {
+    --bs-bg-opacity: 1;
+    background-color: rgba(
+        var(--bs-klinkx-rgb),
+        var(--bs-bg-opacity)
+    ) !important;
+}
+
+.text-klinkx {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-klinkx-rgb), var(--bs-text-opacity)) !important;
+}
+
+.btn-klinkx {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0f75bc;
+    --bs-btn-border-color: #0f75bc;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0f75bc;
+    --bs-btn-hover-border-color: #0f75bc;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #0f75bc;
+    --bs-btn-active-border-color: #0f75bc;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #0f75bc;
+    --bs-btn-disabled-border-color: #0f75bc;
+}
+
+.btn-link {
+    text-decoration: none !important; /* Removes underline */
+}
+
+.btn-link:focus-visible {
+    color: white !important;
+}
+.btn-link:hover {
+    color: white !important;
+}
+
+/* Chat Bot */

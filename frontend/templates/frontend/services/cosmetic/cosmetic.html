@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}KlinikX - Cosmetic{% endblock %}
+
+{% block meta_description %}
+Explore our range of cosmetic non-surgical treatments for enhancing your appearance. From Botox and Dermal Fillers to Laser Hair Removal, Laser Skin Resurfacing, and Chemical Peels, our expert practitioners ensure safe and effective procedures to achieve your desired aesthetic goals.
+{% endblock %}
+
+{% block meta_keywords %}
+cosmetic non-surgical, Botox, Dermal Fillers, Laser Hair Removal, Laser skin resurfacing, Chemical Peels, non-invasive treatments, aesthetic procedures, anti-aging treatments, facial rejuvenation
+{% endblock %}
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'services' %}"><span style="color:black !important;"  >Services</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'cosmetic' %}"><span >Cosmetic Surgery</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl py-3">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+    </div>
+    <ul class="nav nav-tabs nav-fill custom-nav-styled mb-3">
+      <li class="nav-item">
+        <a class="nav-link active text-uppercase" data-bs-toggle="pill" href="#botox">Botox</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#dermal_fillers">Dermal Fillers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#laser_hair_removal">Laser Hair Removal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#laser_skin_resurfacing">Laser Skin Resurfacing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-uppercase" data-bs-toggle="pill" href="#chemical_peels">Chemical Peels</a>
+      </li>
+      <!-- Add more nav-items with nav-links for additional tabs as needed -->
+    </ul>
+
+    <div class="tab-content">
+      {% include 'frontend/services/cosmetic/botox.html' %}
+      {% include 'frontend/services/cosmetic/dermal_fillers.html' %}
+      {% include 'frontend/services/cosmetic/laser_hair_removal.html' %}
+      {% include 'frontend/services/cosmetic/laser_skin_resurfacing.html' %}
+      {% include 'frontend/services/cosmetic/chemical_peels.html' %}
+      <!-- Add more includes for additional tab content as needed -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}

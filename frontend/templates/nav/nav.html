@@ -1,0 +1,50 @@
+{% load static %}
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+    <a href="{% url 'index' %}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h1 class="m-0 text-klinkx">
+          <img src="{% static 'img/KlinikX_Logo.png' %}" alt="Logo" class="img-fluid" style="max-width: 150px; height: auto;">
+        </h1>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0" id="navbar">
+            <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+            <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+            <li class="nav-item dropdown">
+              <a id="servicesDropdown" class="nav-link" href="{% url 'services' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Services <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'hair_transplant' %}">Hair Transplant</a></li>
+                <li><a class="dropdown-item" href="{% url 'dental' %}">Dental</a></li>
+                <li><a class="dropdown-item" href="{% url 'cosmetic' %}">Cosmetic Surgery</a></li>
+                <li><a class="dropdown-item" href="{% url 'eye_surgery' %}">Eye Surgery</a></li>
+                <li><a class="dropdown-item" href="{% url 'art' %}">Assisted Reproductive Technology</a></li>
+                <li><a class="dropdown-item" href="{% url 'plastic' %}">Plastic Surgery</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a id="servicesDropdown" class="nav-link" href="{% url 'gallery' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Gallery <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'gallery_hair_transplant' %}">Hair Transplant</a></li>
+                <li><a class="dropdown-item" href="{% url 'gallery_dental' %}">Dental</a></li>
+                <li><a class="dropdown-item" href="{% url 'gallery_cosmetic' %}">Cosmetic Surgery</a></li>
+                <li><a class="dropdown-item" href="{% url 'gallery_eye_surgery' %}">Eye Surgery</a></li>
+                <li><a class="dropdown-item" href="{% url 'gallery_ivf' %}">Assisted Reproductive Technology</a></li>
+                <li><a class="dropdown-item" href="{% url 'gallery_plastic' %}">Plastic Surgery</a></li>
+              </ul>
+            </li>
+        </div>
+        <a href="{% url 'contact' %}" class="btn btn-klinkx rounded-0 py-4 px-lg-5 d-none d-lg-block">Contact us<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+  
+  
+
+

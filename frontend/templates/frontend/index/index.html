@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+KlinikX - Home
+{% endblock %}
+
+
+{% block content %}
+    <!-- Include Chat Bot -->
+    {% include 'frontend/index/bot.html' %}
+    <!-- Include about Section -->
+    {% include 'frontend/index/about.html'%}
+    <!-- Include service Section -->
+    {% include 'frontend/index/service.html'%}
+    <!-- Include appointment Section -->
+    {% include 'frontend/index/contact_us.html'%}
+    <!-- Include feature Section -->
+    {% include 'frontend/index/feature.html'%}
+    <!-- Include testimonial Section -->
+    {% include 'frontend/index/testimonial.html'%}
+{% endblock %}

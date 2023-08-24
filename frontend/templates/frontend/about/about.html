@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+KlinikX - About
+{% endblock %}
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'about' %}"><span >About Us</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="mb-4 text-klinkx">Welcome to KlinikX: Your Trusted Destination for Premier Medical Care in Istanbul</h2>
+              </div>
+              <br>
+            <!-- Section one start -->
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end d-none d-lg-block" src="{% static 'img/about-1.jpg' %}" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3 d-none d-lg-block" src="{% static 'img/about-2.jpg' %}" alt="" style="margin-top: -25%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    
+                    <h4>Comprehensive Medical Expertise Tailored to Your Needs</h4>
+                    <p>At KlinikX, we are dedicated to providing exceptional medical services tailored to your unique needs. With a team of highly skilled professionals and state-of-the-art facilities, we offer a comprehensive range of treatments and procedures designed to enhance your well-being and improve your quality of life.</p>
+                    <h4>Our Commitment to Excellence</h4>
+                    <p>At the core of our practice is a commitment to excellence. We strive to deliver the highest standards of medical care, combining advanced technology with the expertise of our experienced team. With a focus on precision, safety, and optimal outcomes, we ensure that you receive the best possible care throughout your journey with us.</p>                  
+                </div>
+            </div>
+            <!-- Section one ends -->
+            <!-- Section two starts -->
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h4>Leading the Way as a World-Class Medical Destination</h4>
+                    <p>Our vision is to be the foremost destination for world-class medical services. With cutting-edge facilities and compassionate care, we continuously enhance our services and surpass expectations through innovative solutions.</p>
+                    <h4>Comprehensive Medical Solutions</h4>
+                    <p>KlinikX offers a wide range of medical services to address your health and aesthetic concerns. Our advanced surgical procedures and innovative non-invasive treatments cater to your specific needs, including hair restoration, dental care, aesthetic enhancements, reconstructive surgeries, and wellness services. Regain confidence with natural-looking hair, maintain optimal oral health, enhance your beauty, restore function through reconstructive surgeries, and achieve overall well-being with our comprehensive solutions. Contact us today for personalized care and transformative results.</p>
+                    <h4>Personalized Care and Comfort for an Ultimate Patient Experience</h4>
+                    <p>At KlinikX, we understand that your comfort and satisfaction are paramount. We prioritize creating a warm and welcoming environment where you feel supported and well-cared for. Our team of compassionate professionals is dedicated to ensuring that your experience with us is positive and stress-free, from your initial consultation to post-treatment follow-ups.</p>
+                    <h4>Contact Us</h4>
+                    <p>For personalized medical solutions and exceptional care, trust KlinikX. Contact us today to schedule a consultation and discover how our comprehensive services can help you achieve your health and aesthetic goals. Let us be your trusted partner in your journey towards a better, healthier you.</p>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end d-none d-lg-block" src="{% static 'img/about-us.jpg' %}" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3 d-none d-lg-block" src="{% static 'img/carousel-3.jpg' %}" alt="" style="margin-top: -25%;">
+                    </div>
+                </div>
+            </div>
+            <!-- Section two ends -->
+        </div>
+    </div>
+    <!-- About End -->
+
+{% endblock %}

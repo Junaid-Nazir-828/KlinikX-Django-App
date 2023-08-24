@@ -1,0 +1,87 @@
+{% load static %}
+{% load custom_tags %}
+
+<!-- Testimonial Start -->
+<section id="testimonial-section" class="py-5">
+  <div class="container">
+    <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        {% for testimonial in testimonials %}
+        <div class="carousel-item{% if forloop.first %} active{% endif %}">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="testimonial-item text-center">
+                <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}" class="rounded-circle mb-3">
+                <h4>{{ testimonial.name }}</h4>
+                <p class="testimonial-review overflow-hidden" style="height: 100px;">{{ testimonial.review }}</p>  <!-- Set height to 100px -->
+                <div class="rating-star">
+                  <span title="{{ testimonial.rating }}/5">
+                    {% for i in testimonial.rating|get_range %}
+                      <i class="fa-solid fa-star text-klinkx" aria-hidden="true"></i>
+                    {% endfor %}
+                    {% if testimonial.rating|modulus:1 == 0.5 %}
+                      <i class="fa-solid fa-star-half text-klinkx" aria-hidden="true"></i>
+                    {% endif %}
+                  </span>
+                  <span><strong>({{ testimonial.rating }}/5)</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonial End -->
+
+
+
+
+{% comment %}
+<!-- Testimonial Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5">
+      <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
+      <h1>What Our Patients Say!</h1>
+    </div>
+    <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            {% for testimonial in testimonials %}
+            <div class="col-12 col-md-4">
+              <div class="card text-center">
+                <div class="card-body">
+                  <img src="{{ testimonial.image.url }}" class="img-fluid rounded-circle mb-3" alt="{{ testimonial.name }}">
+                  <p class="card-text text-truncate">{{ testimonial.review|slice:":250" }}</p>
+                  <h5 class="card-title">{{ testimonial.name }}</h5>
+                </div>
+              </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 and not forloop.last %}
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+{% endcomment %}
+

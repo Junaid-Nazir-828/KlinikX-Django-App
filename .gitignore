@@ -1,0 +1,47 @@
+# Ignore virtual environment folders
+venv/
+env/
+virtualenv/
+.venv/
+
+# Ignore Django settings
+*.env
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Ignore IDE and editor-specific files (add more as needed)
+.vscode/
+.idea/
+*.sublime-*
+
+# Ignore logs and cache files
+logs/
+*.log
+*.cache
+
+# Ignore static and media files (only if you serve them from a different location)
+media/
+
+# Ignore database configuration files
+db.sqlite3
+*.db
+
+# Ignore compiled Python files and __pycache__ directory
+__pycache__/
+*.pyc
+
+# Ignore system and temporary files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore sensitive information (you may customize this section based on your needs)
+secret_key.txt
+settings.ini
+credentials.json
+
+# Ignore specific files or directories (add more as needed)
+example.txt
+KlinikX/settings.py

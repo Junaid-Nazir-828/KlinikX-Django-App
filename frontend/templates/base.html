@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Fav icon (the navbar icon)-->
+    <link rel="icon" type="image/x-icon" href="{% static 'icons/favicon.png' %}">
+    
+    <!-- Custom meta block tags -->
+    <meta name="description" content = "{% block meta_description %}{% endblock %}" />
+    <meta name="keywords" content = "{% block meta_keywords %}{% endblock %}" />
+    {% block links %}{% endblock %}
+    <!-- Custom css block tags -->
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="{% block css %}{% endblock %}"
+    />
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+    
+    <!-- Font Awesome Icon Imports-->
+    <link href="{% static 'css/fontawesome/all.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" integrity="sha512-<HASH-VALUE>" crossorigin="anonymous" />
+      
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link href="{% static 'css/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    {% block styles %}
+    {% endblock %}
+
+  </head>
+  <body>
+    <header>
+      {% include 'nav/topbar.html' %}
+      {% include 'nav/nav.html' %}
+      {% block header %} 
+        {% include 'nav/header.html' %}
+      {% endblock %}
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}      
+    </main>
+    <footer>
+      {% include 'nav/footer.html' %}
+    </footer>
+    <!--  -->
+    <input type="hidden" id="Url" data-url="{% url 'myapp:productdetail' id %}" />
+
+    <!-- JavaScript Libraries -->
+
+    <!-- JavaScript Local Libraries-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/lib/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'js/lib/counterup2/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/fontawesome/all.min.js' %}"></script>
+    <script src="{% static 'js/chatbot.js' %}"></script> 
+
+    <!-- Template Javascript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const navbarItems = document.querySelectorAll('#navbar a');
+          const currentUrl = window.location.pathname;
+      
+          navbarItems.forEach((item) => {
+              if (item.getAttribute('href') === currentUrl) {
+                  item.classList.add('active');
+              } else {
+                  item.classList.remove('active');
+              }
+          });
+      });
+    </script>
+    <script src="{% block js %}{% endblock %}"></script>
+    {% block b_js %}
+    {% endblock %}
+  </body>
+</html>
+
+
+
+
+

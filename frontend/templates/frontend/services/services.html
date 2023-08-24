@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+KlinikX - Services
+{% endblock %}
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'services' %}"><span >Our Services</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+    <!-- Include service Section -->
+    {% include 'frontend/index/service.html'%}
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+KlinikX - Gallery - Eye Surgery
+{% endblock %}
+
+{% block links %}
+
+{% endblock %}
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'gallery' %}"><span style="color:black !important;"  >Gallery</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'gallery_eye_surgery' %}"><span >Eye Surgery</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <img width="100%" height="100%" src="{% static 'img/eye_surgery/eye_surgery-1.jpg' %}" alt="Image 1">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <img width="100%" height="100%" src="{% static 'img/eye_surgery/eye_surgery-2.jpg' %}" alt="Image 1">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <img width="100%" height="100%" src="{% static 'img/eye_surgery/eye_surgery-3.jpg' %}" alt="Image 1">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <img width="100%" height="100%" src="{% static 'img/eye_surgery/eye_surgery-4.jpg' %}" alt="Image 1">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <img width="100%" height="100%" src="{% static 'img/eye_surgery/eye_surgery-5.jpg' %}" alt="Image 1">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <img width="100%" height="100%" src="{% static 'img/eye_surgery/eye_surgery-6.jpg' %}" alt="Image 1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

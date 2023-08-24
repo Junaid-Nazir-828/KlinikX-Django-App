@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+KlinikX - Gallery
+{% endblock %}
+
+{% block links %}
+
+{% endblock %}
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'contact' %}"><span >Gallery</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl py-5">
+    <div class="container">
+
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                         <i class="fas fa-scissors fa-3x text-klinkx"></i>
+                    </div>
+                    <h4 class="mb-3">Hair Transplant</h4>
+                    <p class="mb-4">Restore confidence with our hair transplant solutions. Natural, long-lasting results. Explore transformative treatments today.</p>
+                    <a class="btn" href="{% url 'gallery_hair_transplant' %}"><i class="fa fa-plus text-klinkx me-3"></i>View Gallery</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                        <i class="fas fa-tooth fa-3x text-klinkx"></i>
+                    </div>
+                    <h4 class="mb-3">Dental Treatment</h4>
+                    <p class="mb-4">Achieve a radiant smile with comprehensive dental care. Expert team enhancing oral health. Discover our professional services.</p>
+                    <a class="btn" href="{% url 'gallery_dental' %}"><i class="fa fa-plus text-klinkx me-3"></i>View Gallery</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                        <i class="fas fa-syringe fa-3x text-klinkx"></i>
+                    </div>
+                    <h4 class="mb-3">Cosmetic Surgery</h4>
+                    <p class="mb-4">Enhance your beauty with cutting-edge cosmetic surgery. Transformative procedures for a rejuvenated appearance. Discover more now.</p>
+                    <a class="btn" href="{% url 'gallery_cosmetic' %}"><i class="fa fa-plus text-klinkx me-3"></i>View Gallery</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                        <i class="fas fa-eye fa-3x text-klinkx"></i>
+                    </div>
+                    <h4 class="mb-3">Eye Surgery</h4>
+                    <p class="mb-4">Experience clear vision with advanced Lasik eye surgery. Bid farewell to glasses. Explore our professional treatments.</p>
+                    <a class="btn" href="{% url 'gallery_eye_surgery' %}"><i class="fa fa-plus text-klinkx me-3"></i>View Gallery</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                        <i class="fas fa-baby fa-3x text-klinkx"></i>
+                    </div>
+                    <h4 class="mb-3">IVF treatment</h4>
+                    <p class="mb-4">Fulfill your dreams of parenthood with leading IVF treatments. Advanced care for successful outcomes. Learn about our services.</p>
+                    <a class="btn" href="{% url 'gallery_ivf' %}"><i class="fa fa-plus text-klinkx me-3"></i>View Gallery</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item bg-light rounded h-100 p-5">
+                    <div class="d-inline-flex align-items-center justify-content-center bg-white rounded-circle mb-4" style="width: 65px; height: 65px;">
+                        <i class="fas fa-flask fa-3x text-klinkx"></i>
+                    </div>
+                    <h4 class="mb-3">Plastic Surgery</h4>
+                    <p class="mb-4">Take control of your health with comprehensive lab tests. Accurate results for informed decisions. Explore our testing options.</p>
+                    <a class="btn" href="{% url 'gallery_plastic' %}"><i class="fa fa-plus text-klinkx me-3"></i>View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

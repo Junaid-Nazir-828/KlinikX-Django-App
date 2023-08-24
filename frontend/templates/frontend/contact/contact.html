@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+KlinikX - Contact us
+{% endblock %}
+
+{% block header %}
+<div class="container container-md-fluid nav-breadcrumb">
+    <div class="row ">
+        <div class="col-auto col-md-12">
+            <nav aria-label="breadcrumb " class="first col-auto" >
+                <ol class="breadcrumb indigo lighten-6 first-1 shadow-lg  ">
+                    <li class="breadcrumb-item font-weight-bold"><span style="color:black !important;">KlinikX</span><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"></li>
+                    <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase  " href="{% url 'index' %}"><span style="color:black !important;"  >home</span></a><img class="ml-md-3" src="{% static 'img/double-right.png' %}" width="20" height="20"> </li>
+                    <li class="breadcrumb-item font-weight-bold mr-0 pr-0"><a class="black-text active-1" href="{% url 'contact' %}"><span >Contact Us</span></a> </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+ {% block content %}
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+      <h1>Curious to know more? Get in touch with us today!</h1>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+          <div
+            class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+            style="width: 55px; height: 55px"
+          >
+            <i class="fa fa-map-marker-alt text-klinkx"></i>
+          </div>
+          <div class="ms-4">
+            <p class="mb-2">Address</p>
+            <h5 class="mb-0">{{address}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+          <div
+            class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+            style="width: 55px; height: 55px"
+          >
+            <i class="fa fa-phone-alt text-klinkx"></i>
+          </div>
+          <div class="ms-4">
+            <p class="mb-2">Call Us Now</p>
+            <h5 class="mb-0">{{phone_number}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+          <div
+            class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+            style="width: 55px; height: 55px"
+          >
+            <i class="fa fa-envelope-open text-klinkx"></i>
+          </div>
+          <div class="ms-4">
+            <p class="mb-2">Mail Us Now</p>
+            <h5 class="mb-0">{{email}}</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Form Start -->
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+        <div class="bg-light rounded p-5">
+          <h1 class="mb-4">
+            Contact Us
+          </h1>
+          <form method="POST" action='/contact/'>
+            {% csrf_token %}
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  {{ form.first_name }}
+                  <label for="{{ form.first_name.id_for_label }}"
+                    >Your First Name</label
+                  >
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  {{ form.last_name }}
+                  <label for="{{ form.last_name.id_for_label }}"
+                    >Your Last Name</label
+                  >
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  {{ form.email }}
+                  <label for="{{ form.email.id_for_label }}">Your Email</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating">
+                  {{ form.phone_number }}
+                  <label for="{{ form.phone_number.id_for_label }}"
+                    >Your Phone Number</label
+                  >
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  {{ form.subject }}
+                  <label for="{{ form.subject.id_for_label }}">Subject</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  {{ form.message }}
+                  <label for="{{ form.message.id_for_label }}">Message</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-klinkx w-100 py-3" type="submit">
+                  Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+          {% if success %}
+          <div class="alert alert-success mt-4">Message sent successfully!</div>
+          {% endif %} {% if error %}
+          <div class="alert alert-danger mt-4">{{ error }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Form End -->
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+        <div class="h-100" style="min-height: 400px">
+          <iframe
+            class="rounded w-100 h-100"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.325237751137!2d28.628964314825193!3d41.03659177929949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabdeee4d5a1a9%3A0x3e5152f2cc0b3dc3!2sEsenyurt%2C%20Istanbul%2C%20Turkey!5e0!3m2!1sen!2sus!4v1625375810871!5m2!1sen!2sus"
+            frameborder="0"
+            allowfullscreen=""
+            aria-hidden="false"
+            tabindex="0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
+{% endblock %}

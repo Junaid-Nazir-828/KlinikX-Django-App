@@ -1,0 +1,25 @@
+    {% load static %}
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex flex-column">
+                        <img class="img-fluid rounded w-75 align-self-end" src="{% static 'img/about-1.jpg' %}" alt="">
+                        <img class="img-fluid rounded w-50 bg-white pt-3 pe-3" src="{% static 'img/about-2.jpg' %}" alt="" style="margin-top: -25%;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">Why You Should Trust Us? Get Know About Us!</h1>
+                    <p>Experience the forefront of medical care in Turkey, where cutting-edge technologies meet unparalleled affordability. From cosmetic enhancements to life-changing surgeries, our clinic delivers excellence and innovation. Trust in our commitment to your well-being as we prioritize safety and push the boundaries of medical advancements.</p>
+                    <p class="mb-4">Discover a transformative healthcare experience at our state-of-the-art clinic. With a comprehensive range of services, including hair transplants, plastic surgeries, and dental treatments, we offer personalized solutions to meet your unique needs. Benefit from our expertise and enjoy a remarkable combination of advanced technologies and accessible pricing.</p>
+                    <p><i class="far fa-check-circle text-klinkx me-3"></i>Quality healthcare</p>
+                    <p><i class="far fa-check-circle text-klinkx me-3"></i>Cutting-Edge Technologies</p>
+                    <p><i class="far fa-check-circle text-klinkx me-3"></i>EU Standards Compliance</p>
+                    <p><i class="far fa-check-circle text-klinkx me-3"></i>Affordable Prices</p>
+                    <a class="btn btn-klinkx rounded-pill py-3 px-5 mt-3" href="{% url 'about' %}">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
