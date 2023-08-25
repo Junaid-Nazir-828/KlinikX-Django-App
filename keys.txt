@@ -1,0 +1,11 @@
+
+OPENAI_API_KEY = "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"
+
+# superuser details
+# user: klinikx
+# pass: !Mario1989
+
+# 'Authorization' : 'Authorization',
+# 'Token' : 'Bearer EAAUahiQVbJoBACyng7ZCzszjdRl0Rl6sZCvZAC7atPwgnI6JOUaDoRSrrJanwrryWwUOLG9ZChyXBrQbwMdZC5fJXQ0kSpLokX24RuCMvnswcQonlzCmDjWaklzLJ12fQdmN8gPaAAUbtcrn5VWniTR61S5g4pa3dZAfCib5At7rCVF4fg6TCT',
+# 'phone_number_id' : '103003712616245',
+# 'whatsapp_business_account_id' : '112005161621553',
